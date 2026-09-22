@@ -1,6 +1,8 @@
 # Fireflint
 ## Bring AI into your workflow. Keep privacy in your hands.
 
+**English | [中文](README_CN.md)**
+
 Fireflint is an AI assistant for macOS. Select text, capture your screen, or add a document to start translating, summarizing, researching, and analyzing.
 
 From everyday text tasks to multi-step workflows, Fireflint brings together local models, external AI services, and privacy protection—so you can choose the right AI for each task while staying informed about how your data is used.
