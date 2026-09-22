@@ -3,77 +3,77 @@
 
 **English | [中文](README_CN.md)**
 
-Fireflint is an AI assistant for macOS. Select text, capture your screen, or add a document to start translating, summarizing, researching, and analyzing.
+Fireflint is an AI assistant for macOS. Select text, capture your screen, or drop in a document to translate, summarize, research, and analyze.
 
-From everyday text tasks to multi-step workflows, Fireflint brings together local models, external AI services, and privacy protection—so you can choose the right AI for each task while staying informed about how your data is used.
+From quick text tasks to multi-step workflows, Fireflint combines local models, external AI services, and privacy protection—so you can pick the right AI for each task and always know how your data is used.
 
 ---
 
-## Everyday tasks, processed locally
+## Everyday tasks, handled locally
 
-Translate a passage, explain a term, or summarize selected text without sending it to an external model.
+Translate a passage, explain a term, or summarize what you've selected—nothing has to leave your device.
 
-Fireflint includes a local AI model that handles selection-based translation, explanations, and summaries on your device. Screenshot text recognition uses local macOS OCR. You can also chat with the local model to work with text, images, and documents you provide.
+Fireflint ships with a local AI model that translates, explains, and summarizes selected text right on your Mac. Screenshot text recognition runs on macOS's built-in OCR. You can also chat with the local model about any text, images, or documents you give it.
 
-**Select, act, and keep working—with AI tools built into your desktop workflow.**
+**Select, act, and keep going—with AI built into your desktop workflow.**
 
-## Cloud capabilities, with an extra layer of privacy
+## Cloud power, with an extra layer of privacy
 
-When a complex task calls for an external model, connect your preferred provider and enable privacy redaction. Redaction is enabled by default for external models.
+When a complex task calls for an external model, connect your preferred provider and turn on privacy redaction. It's on by default for external models.
 
-Before sending content, Fireflint identifies and processes sensitive information locally—including names, contact details, addresses, and credentials—while aiming to preserve the structure needed for the task. Images are also analyzed locally and masked where needed when they are accessed.
+Before anything is sent, Fireflint detects and processes sensitive information locally—names, contact details, addresses, credentials—while keeping the structure the task depends on. Images are analyzed locally too, and masked where needed before they're used.
 
-You can add sensitive terms and field labels, and precisely correct certain false detections, to better match your work.
+Add your own sensitive terms and field labels, and correct individual false positives, so the protection fits the way you actually work.
 
-**An extra layer of protection between your device and the cloud, configured by you.**
+**An extra layer of protection between your Mac and the cloud—configured by you.**
 
-## Tools that get work done, with clear permission boundaries
+## Gets work done, within clear permission boundaries
 
 Fireflint can research online, read files, and use tools to organize text and process data.
 
-These capabilities operate within a controlled environment. File access is limited to authorized workspace boundaries, attachments remain read-only, and general network access and integration operations follow permission policies.
+All of this runs in a controlled environment: file access stays within the workspaces you authorize, attachments are read-only, and network access and integrations follow permission policies.
 
-Review requests yourself, or enable **“Approve for me”** to let a local model help assess task-related operations. Uncertain cases return to you for confirmation, and high-risk write operations still require human approval.
+Review each request yourself, or turn on **“Approve for me”** and let a local model vet task-related operations. Anything uncertain comes back to you, and high-risk write operations always need your approval.
 
-**Let AI handle more of the work while you retain control over important decisions.**
+**Let AI do more of the work—while the important calls stay with you.**
 
 ---
 
-## From a passage of text to a complete task
+## From a line of text to a finished task
 
 ### Translate and understand
-Select text to translate it, explore word meanings, explain concepts, or extract key points. Results appear in a floating window, ready to copy or discuss further.
+Select text to translate it, look up words, unpack concepts, or pull out key points. Results show up in a floating window, ready to copy or explore further.
 
 ### Ask about your screen
-Capture a window or select a screen region to extract text, translate content, or ask AI about the image.
+Capture a window or drag across a region to extract text, translate what's there, or ask AI about the image.
 
-### Read documents and extract insights
-Work with PDFs, Word documents, Excel spreadsheets, and PowerPoint presentations. Find relevant passages and extract key information. Local OCR helps read scanned PDFs, while embedded images can be inspected on demand.
+### Read documents, extract insights
+Work with PDFs, Word documents, Excel spreadsheets, and PowerPoint files. Find the passages that matter and pull out the key information. Local OCR reads scanned PDFs, and embedded images can be inspected on demand.
 
-### Research and organize information
-Search the web, read sources, and turn scattered information into answers with references you can check.
+### Research and organize
+Search the web, read the sources, and turn scattered information into answers with citations you can verify.
 
-### Combine local and cloud AI
-An external lead agent can delegate suitable subtasks to a local agent, including file processing and image understanding.
+### Local and cloud AI, working together
+A cloud-based lead agent can hand suitable subtasks—like file processing or image understanding—to a local agent.
 
 ---
 
 ## A desktop assistant for everyday use
 
 - **Choose your models:** Use the built-in local model or connect external AI services.
-- **Keep work moving:** Save, search, pin, and restore conversations, and manage long-term memory across sessions.
+- **Pick up where you left off:** Save, search, pin, and restore conversations, with long-term memory across sessions.
 - **Make it yours:** Customize shortcuts, toolbars, excluded apps, and appearance.
-- **Manage downloads easily:** Pause and resume model downloads, with integrity checks built in.
-- **Grant system permissions when needed:** Accessibility supports text selection; screen recording permission is requested when you first capture your screen.
+- **Downloads without the fuss:** Pause and resume model downloads, with integrity checks built in.
+- **Permissions only when needed:** Accessibility enables text selection; screen recording is requested the first time you capture your screen.
 
 ---
 
-## Privacy also means being clear about the limits
+## Privacy means being honest about the limits
 
-Local inference does not mean every operation stays offline. Web searches and third-party integrations may send necessary data to their respective services. Redaction helps reduce sensitive information exposure to external model providers, but cannot guarantee that every sensitive detail will be detected.
+Local inference doesn't mean everything stays offline. Web searches and third-party integrations still send the necessary data to their respective services. Redaction reduces the sensitive information exposed to external model providers, but it can't guarantee every sensitive detail gets caught.
 
-Fireflint gives you separate controls for model choice, privacy protection, and tool authorization—so you can use each capability with a clearer understanding of its boundaries.
+Fireflint puts model choice, privacy protection, and tool authorization in your hands as separate controls—so every capability comes with boundaries you can see.
 
-**Fireflint—AI that starts locally and fits the way you work.**
+**Fireflint—AI that starts local and works the way you do.**
 
-*Requires macOS 14 or later. Available in English and Chinese. Local AI requires an initial model download.*
+*Requires macOS 14 or later. Available in English and Chinese. Local AI requires a one-time model download.*
