@@ -9,26 +9,32 @@ const demos = {
 };
 let lang = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'zh';
 let activeDemo = 'translate';
-let playing = false;
-let release = null;
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+let playing = !reducedMotion.matches;
+let rotationEnabled = !reducedMotion.matches;
+let inView = false;
+let hovered = false;
+let focused = false;
+let rotationTimer;
+const rotationDelay = 20000;
+const showcase = document.getElementById('demo-showcase');
+const rotationButton = document.getElementById('demo-rotation');
 const demoImage = document.getElementById('demo-image');
 const playButton = document.getElementById('demo-play');
-function updateRelease() {
-  if (!release) return;
-  for (const node of document.querySelectorAll('[data-release]')) node.textContent = `${release.version} · DMG · ${release.size} MB`;
-}
 function updateDemo() {
   const demo = demos[activeDemo];
   const content = demo[lang];
   ['demo-tag','demo-title','demo-description','demo-note'].forEach((id,index) => {document.getElementById(id).textContent = content[index];});
-  const source = playing && demo.animation ? demo.animation : demo.poster;
-  demoImage.src = source;
+  const source = playing && inView && !document.hidden && demo.animation ? demo.animation : demo.poster;
+  if (demoImage.getAttribute('src') !== source) demoImage.src = source;
   demoImage.alt = content[4];
   document.getElementById('demo-image-button').dataset.image = source;
   playButton.hidden = !demo.animation;
   playButton.setAttribute('aria-pressed', String(playing));
   playButton.querySelector('span').textContent = lang === 'en' ? (playing ? 'Stop demo' : 'Play demo') : (playing ? '停止演示' : '播放操作演示');
   playButton.lastElementChild.textContent = playing ? '■' : '▶';
+  rotationButton.textContent = lang === 'en' ? (rotationEnabled ? 'Pause auto-advance' : 'Resume auto-advance') : (rotationEnabled ? '暂停自动轮播' : '继续自动轮播');
+  rotationButton.setAttribute('aria-pressed', String(rotationEnabled));
 }
 function setLanguage(next, updateURL = false) {
   lang = next;
@@ -37,19 +43,20 @@ function setLanguage(next, updateURL = false) {
   accessibleTranslations.forEach(({element,attribute,zh,en}) => element.setAttribute(attribute,lang === 'en' ? en : zh));
   document.getElementById('language').textContent = lang === 'en' ? '中文' : 'EN';
   document.getElementById('language').setAttribute('aria-label', lang === 'en' ? '切换为中文' : 'Switch to English');
-  document.title = lang === 'en' ? 'Fireflint — AI in your workflow. Privacy in your hands.' : 'Fireflint 火石 — 让 AI 融入工作，让隐私握在手中';
-  document.querySelector('meta[name="description"]').content = lang === 'en' ? 'Fireflint is an AI assistant for macOS. Translate selected text, ask about screenshots, read documents, and research—with local models and configurable privacy protection.' : 'Fireflint 火石，面向 macOS 的 AI 助手。划词翻译、截图即问、文档阅读与联网检索，从本地出发，让隐私握在自己手中。';
+  document.title = lang === 'en' ? 'Fireflint — Local AI. No token fees. Privacy you control.' : 'Fireflint 火石 — 本地 AI，Token 自由，隐私可控。';
+  document.querySelector('meta[name="description"]').content = lang === 'en' ? 'Local AI. No token fees. Privacy you control. Fireflint brings local inference to your Mac without per-token charges, with translation, screen capture, and document reading.' : 'Fireflint 火石：本地 AI，Token 自由，隐私可控。面向 macOS 的 AI 助手，本地推理不按 Token 计费，支持划词翻译、截图即问与文档阅读。';
   document.querySelectorAll('[data-doc]').forEach(link => {link.href = `https://github.com/badpx/FireflintRelease/blob/main/${lang === 'en' ? 'README.md' : 'README_CN.md'}`;});
   if (updateURL) {const url = new URL(location.href);if(lang === 'en') url.searchParams.set('lang','en');else url.searchParams.delete('lang');history.replaceState(null,'',url);}
-  updateDemo(); updateRelease();
+  updateDemo();
 }
 document.getElementById('language').addEventListener('click', () => setLanguage(lang === 'en' ? 'zh' : 'en', true));
 const tabs = [...document.querySelectorAll('[data-demo]')];
 function selectDemo(tab) {
-  activeDemo = tab.dataset.demo; playing = false;
+  activeDemo = tab.dataset.demo;
   tabs.forEach(button => {const selected = button === tab; button.setAttribute('aria-selected',String(selected));button.tabIndex = selected ? 0 : -1;});
   document.getElementById('demo-panel').setAttribute('aria-labelledby',tab.id);
   updateDemo();
+  scheduleRotation();
 }
 tabs.forEach((tab,index) => {
   tab.addEventListener('click',() => selectDemo(tab));
@@ -62,13 +69,45 @@ tabs.forEach((tab,index) => {
     if(target){event.preventDefault();selectDemo(target);target.focus();}
   });
 });
-playButton.addEventListener('click',() => {playing = !playing;updateDemo();});
+playButton.addEventListener('click',() => {
+  playing = !playing;
+  if (!playing) rotationEnabled = false;
+  updateDemo(); scheduleRotation();
+});
+rotationButton.addEventListener('click',() => {
+  rotationEnabled = !rotationEnabled;
+  updateDemo(); scheduleRotation();
+});
+function scheduleRotation() {
+  clearTimeout(rotationTimer);
+  if (!rotationEnabled || !inView || !demoImage.complete || hovered || focused || document.hidden || dialog.open) return;
+  rotationTimer = setTimeout(() => {
+    const index = tabs.findIndex(tab => tab.dataset.demo === activeDemo);
+    selectDemo(tabs[(index + 1) % tabs.length]);
+  }, rotationDelay);
+}
+demoImage.addEventListener('load', scheduleRotation);
+showcase.addEventListener('mouseenter',() => {hovered = true; scheduleRotation();});
+showcase.addEventListener('mouseleave',() => {hovered = false; scheduleRotation();});
+showcase.addEventListener('focusin',() => {focused = true; scheduleRotation();});
+showcase.addEventListener('focusout',event => {
+  focused = showcase.contains(event.relatedTarget);
+  scheduleRotation();
+});
+new IntersectionObserver(entries => {
+  inView = entries[0].isIntersecting;
+  updateDemo(); scheduleRotation();
+}, {threshold:0.25}).observe(document.getElementById('demo-panel'));
+document.addEventListener('visibilitychange',() => {updateDemo(); scheduleRotation();});
+reducedMotion.addEventListener('change',event => {
+  if (event.matches) {playing = false; rotationEnabled = false; updateDemo(); scheduleRotation();}
+});
 const dialog = document.getElementById('image-dialog');
 const largeImage = document.getElementById('large-image');
-document.querySelectorAll('[data-image]').forEach(button => button.addEventListener('click',() => {largeImage.src = button.dataset.image;largeImage.alt = button.querySelector('img').alt;dialog.showModal();}));
+document.querySelectorAll('[data-image]').forEach(button => button.addEventListener('click',() => {largeImage.src = button.dataset.image;largeImage.alt = button.querySelector('img').alt;dialog.showModal();scheduleRotation();}));
 document.getElementById('close-image').addEventListener('click',() => dialog.close());
 dialog.addEventListener('click',event => {if(event.target === dialog) dialog.close();});
-dialog.addEventListener('close',() => {largeImage.removeAttribute('src');});
+dialog.addEventListener('close',() => {largeImage.removeAttribute('src');scheduleRotation();});
 setLanguage(lang);
 // GitHub is also the download host. No analytics, external fonts, or cookies.
 // If the API is unavailable or rate limited, the links still open Latest Release.
@@ -79,7 +118,5 @@ fetch('https://api.github.com/repos/badpx/FireflintRelease/releases/latest', {si
     if(!asset) return;
     const url = new URL(asset.browser_download_url);
     if(url.origin !== 'https://github.com' || !url.pathname.startsWith('/badpx/FireflintRelease/releases/download/')) return;
-    release = {version:data.tag_name,size:Math.round(asset.size / 1048576)};
     document.querySelectorAll('[data-download]').forEach(link => {link.href = url.href;});
-    updateRelease();
   }).catch(() => {document.querySelectorAll('[data-download]').forEach(link => {link.href = releasePage;});});

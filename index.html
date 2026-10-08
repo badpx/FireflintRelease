@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f4ef">
-  <meta name="description" content="Fireflint 火石，面向 macOS 的 AI 助手。划词翻译、截图即问、文档阅读与联网检索，从本地出发，让隐私握在自己手中。">
-  <meta property="og:title" content="Fireflint 火石 · 让 AI 融入工作，让隐私握在手中">
-  <meta property="og:description" content="从一段文字到一项完整任务。为 Mac 打造的本地 AI 助手，自由选择模型，清楚掌握数据和权限。">
+  <meta name="description" content="Fireflint 火石：本地 AI，Token 自由，隐私可控。面向 macOS 的 AI 助手，本地推理不按 Token 计费，支持划词翻译、截图即问与文档阅读。">
+  <meta property="og:title" content="Fireflint 火石 · 本地 AI，Token 自由，隐私可控。">
+  <meta property="og:description" content="本地 AI，Token 自由，隐私可控。用本地模型自由提问，按需连接外部模型，掌握数据与工具权限。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://badpx.github.io/FireflintRelease/">
   <meta property="og:image" content="https://badpx.github.io/FireflintRelease/icon.png">
@@ -14,7 +14,7 @@
   <link rel="icon" href="icon.png" type="image/png">
   <link rel="stylesheet" href="assets/site.css">
   <script src="assets/site.js" defer></script>
-  <title>Fireflint 火石 — 让 AI 融入工作，让隐私握在手中</title>
+  <title>Fireflint 火石 — 本地 AI，Token 自由，隐私可控。</title>
 </head>
 <body>
   <a class="skip" href="#main" data-en="Skip to content">跳至正文</a>
@@ -28,10 +28,10 @@
   <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="eyebrow"><span class="spark" aria-hidden="true"></span><span data-en="A LITTLE SPARK FOR YOUR MAC">为 Mac 点燃一点灵感</span></div>
-      <h1 id="hero-title"><span data-en="AI in your workflow.">让 AI 融入工作，</span><br><span class="muted" data-en="Privacy in your hands.">让隐私握在手中。</span></h1>
-      <p class="hero-description" data-en="Select text. Capture your screen. Drop in a document. An AI assistant that starts on your Mac and helps you take the next step.">选中文字、截取屏幕、添加文档。<br>从本地出发，让每一次提问，都更贴近你的工作。</p>
+      <h1 id="hero-title"><span data-en="Local AI. No token fees.">本地 AI，Token 自由，</span><br><span class="muted" data-en="Privacy you control.">隐私可控。</span></h1>
+      <p class="hero-description" data-en="Translate, ask, and read with AI on your Mac—without per-token fees for local inference. Choose when to use cloud models, and how to protect what you share.">划词、截图、读文档，用本地 AI 自由提问，无需按 Token 付费。<br>何时连接外部模型、如何保护数据，都由你掌握。</p>
       <div class="hero-actions"><a class="button" data-download href="https://github.com/badpx/FireflintRelease/releases/latest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg><span data-en="Download for macOS">下载 macOS 版</span></a><a class="text-link" href="#features"><span data-en="See it in action">看看火石能做什么</span><span aria-hidden="true">↓</span></a></div>
-      <p class="requirements"><span data-en="macOS 14 or later">适用于 macOS 14 及以上版本</span><span aria-hidden="true"> · </span><span data-release data-en="Available on GitHub Releases">通过 GitHub Releases 分发</span></p>
+      <p class="requirements"><span data-en="macOS 14 or later">适用于 macOS 14 及以上版本</span></p>
       <div class="hero-stage">
         <div class="stage-heading"><span class="stage-dots" aria-hidden="true"><i></i><i></i><i></i></span><span data-en="Your next idea starts here.">新的想法，从这里开始。</span><span class="stage-label">FIREFLINT / MAC</span></div>
         <button class="screenshot hero-screen" data-image="screenshot/create_session.png" aria-label="放大查看 Fireflint 主界面" data-en-label="Enlarge the Fireflint main window"><img src="screenshot/create_session.png" width="2240" height="1440" fetchpriority="high" alt="Fireflint 会话主界面，包含会话列表和提问输入框" data-en-alt="Fireflint conversation window with session history and a prompt composer"></button>
@@ -41,12 +41,14 @@
 
     <div class="principles wrap">
       <div><span class="number">01 /</span><strong data-en="Start local">从本地开始</strong><span data-en="Everyday AI, right on your Mac">常用 AI 能力，在设备上完成</span></div>
-      <div><span class="number">02 /</span><strong data-en="Choose freely">自由选择模型</strong><span data-en="Built-in models or your own provider">内置本地模型，也可连接外部服务</span></div>
+      <div><span class="number">02 /</span><strong data-en="No local token fees">本地 Token 自由</strong><span data-en="Local inference without per-token charges">本地模型推理，不按 Token 计费</span></div>
       <div><span class="number">03 /</span><strong data-en="Stay in control">重要决定由你掌握</strong><span data-en="Separate controls for privacy and permissions">隐私保护与工具授权，分别可控</span></div>
     </div>
 
     <section class="section wrap" id="features" aria-labelledby="features-title">
-      <div class="section-head"><div><p class="kicker" data-en="LESS SWITCHING. MORE DOING.">让 AI 接上你正在做的事</p><h2 id="features-title"><span data-en="From a line of text">从一段文字，</span><br><span data-en="to a finished task.">到一项完整任务。</span></h2></div><p data-en="Bring AI to the work in front of you. Translate, understand, and organize without losing your train of thought.">让 AI 出现在需要它的地方。<br>翻译、理解、整理，思路自然延续。</p></div>
+      <div class="section-head"><div><p class="kicker" data-en="LESS SWITCHING. MORE DOING.">让 AI 接上你正在做的事</p><h2 id="features-title"><span data-en="From a line of text">从一段文字，</span><br><span data-en="to a finished task.">到一项完整任务。</span></h2></div><p data-en="Keep everyday tasks local, without per-token fees. Translate, understand, and organize at your own pace.">让日常任务在本地完成，不必计算 Token 花费。<br>翻译、理解、整理，按自己的节奏深入。</p></div>
+      <div class="demo-showcase" id="demo-showcase">
+      <div class="demo-toolbar"><span data-en="Auto-advance every 20 seconds">每 20 秒自动切换</span><button class="text-link" id="demo-rotation" type="button" aria-pressed="true">暂停自动轮播</button></div>
       <div class="demo-tabs" role="tablist" aria-label="Product demos">
         <button id="tab-translate" class="demo-tab" role="tab" aria-selected="true" aria-controls="demo-panel" data-demo="translate"><span class="tab-number">01</span><span data-en="Select & understand">划词即懂</span><span aria-hidden="true">↗</span></button>
         <button id="tab-capture" class="demo-tab" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="capture"><span class="tab-number">02</span><span data-en="Capture & ask">截图即问</span><span aria-hidden="true">↗</span></button>
@@ -56,11 +58,12 @@
         <div class="demo-copy"><span class="pill" id="demo-tag">本地处理</span><h3 id="demo-title">随手选中，原地理解。</h3><p id="demo-description">翻译一段文字、解释一个概念，或提炼选中内容的重点。结果在浮动窗口中呈现，支持复制和继续提问。</p><button class="text-link" id="demo-play" type="button"><span data-en="Play demo">播放操作演示</span><span aria-hidden="true">▶</span></button><span class="demo-note" id="demo-note">划词使用辅助功能权限</span></div>
         <button class="screenshot demo-media" id="demo-image-button" data-image="assets/translation-poster.png" aria-label="放大查看功能演示" data-en-label="Enlarge the feature demo"><img id="demo-image" src="assets/translation-poster.png" width="1200" height="800" loading="lazy" alt="划词翻译操作演示"></button>
       </div>
+      </div>
       <div class="more-features"><article><span class="feature-symbol" aria-hidden="true">⌕</span><h3 data-en="Research, with sources">检索信息，也保留依据</h3><p data-en="Search the web, read original sources, and get answers with citations you can check.">搜索网页、阅读来源，把分散的信息整理为带引用的回答，方便进一步核对。</p></article><article><span class="feature-symbol" aria-hidden="true">⌘</span><h3 data-en="Local and cloud, together">本地与云端协作</h3><p data-en="A cloud lead agent can hand suitable subtasks, such as file processing or image understanding, to a local agent.">外部主 Agent 可将文件处理、图片理解等适合的子任务交给本地 Agent，协作完成工作。</p></article><article><span class="feature-symbol" aria-hidden="true">↺</span><h3 data-en="Pick up where you left off">工作上下文，随时续上</h3><p data-en="Save, search, pin, and restore conversations. Keep useful knowledge with memory across sessions.">保存、搜索、置顶和恢复会话，并管理跨会话长期记忆，让有用的信息持续相伴。</p></article></div>
     </section>
 
     <section class="privacy" id="privacy" aria-labelledby="privacy-title"><div class="wrap">
-      <div class="privacy-top"><div class="privacy-copy"><p class="kicker" data-en="CAPABLE AI. CONSIDERED PRIVACY.">把能力交给 AI，把选择留给自己</p><h2 id="privacy-title"><span data-en="More possibilities.">能力向外延伸，</span><br><span data-en="Clearer boundaries.">隐私有据可依。</span></h2><p data-en="Keep everyday inference local. When you choose an external model, local redaction adds a configurable layer of protection before content is sent.">日常推理可在设备上完成。需要外部模型时，在发送前增加一层由你配置的本地脱敏保护。</p><a class="light-link" href="https://github.com/badpx/FireflintRelease/blob/main/README_CN.md" data-doc><span data-en="Understand the privacy boundaries">了解隐私保护边界</span> <span aria-hidden="true">↗</span></a></div>
+      <div class="privacy-top"><div class="privacy-copy"><p class="kicker" data-en="CAPABLE AI. CONSIDERED PRIVACY.">把能力交给 AI，把选择留给自己</p><h2 id="privacy-title"><span data-en="More possibilities.">能力向外延伸，</span><br><span data-en="Clearer boundaries.">隐私有据可依。</span></h2><p data-en="Local AI keeps everyday inference on your Mac, with no per-token fees. When you choose cloud models, control what you share with configurable local redaction.">本地 AI 让日常推理留在 Mac 上，无需按 Token 付费。需要外部模型时，通过可配置的本地脱敏，掌握分享内容的边界。</p><a class="light-link" href="https://github.com/badpx/FireflintRelease/blob/main/README_CN.md" data-doc><span data-en="Understand the privacy boundaries">了解隐私保护边界</span> <span aria-hidden="true">↗</span></a></div>
       <div class="privacy-visual"><div class="privacy-visual-label"><span class="status-dot"></span><span data-en="Redact locally. Then send.">先在本地脱敏，再发送。</span></div><button class="screenshot" data-image="screenshot/text_privacy_result.png" aria-label="放大查看隐私脱敏结果" data-en-label="Enlarge the privacy redaction screenshot"><img src="screenshot/text_privacy_result.png" width="2236" height="1478" loading="lazy" alt="发送前将敏感文本替换为匿名标记" data-en-alt="Sensitive text replaced with anonymous markers before sending"></button></div></div>
       <div class="privacy-points"><article><span>01</span><h3 data-en="Sensitive content, handled locally">敏感内容，先在本机处理</h3><p data-en="Detect names, contact details, addresses, and credentials. Image reading can also apply local masks where needed.">识别姓名、联系方式、地址和凭据等敏感信息；读取图片时，也可在本地进行必要的遮罩处理。</p></article><article><span>02</span><h3 data-en="Protection that fits your work">保护规则，适应你的工作</h3><p data-en="Redaction is on by default for external models. Add sensitive terms and field labels, and correct false positives.">外部模型默认开启脱敏。支持自定义敏感词、字段标签及逐条纠正误报，让规则更贴合实际需要。</p></article><article><span>03</span><h3 data-en="Tools with permission boundaries">工具执行，有明确权限边界</h3><p data-en="File access stays in authorized workspaces and attachments remain read-only. Uncertain operations return to you for review.">文件访问受工作区限制，附件保持只读。你可以逐次审批，不确定的操作会回到人工确认。</p></article></div>
       <p class="privacy-boundary" data-en="Local inference does not mean every operation is offline. Web searches and third-party integrations may send necessary data to their services. Redaction reduces exposure; it cannot guarantee that every sensitive detail is detected.">本地推理不等于所有操作都离线。联网搜索和第三方集成仍可能向对应服务发送必要数据；脱敏可以减少暴露，但无法保证识别所有敏感内容。</p>
@@ -68,16 +71,17 @@
 
     <section class="section wrap everyday" aria-labelledby="everyday-title"><div><p class="kicker" data-en="AT HOME ON YOUR MAC">融入桌面，也贴合习惯</p><h2 id="everyday-title" data-en="An assistant worth keeping around.">一个可以长期相伴的<br>桌面助手。</h2></div><div class="everyday-list"><div><span aria-hidden="true">↳</span><div><h3 data-en="Make it yours">按你的习惯工作</h3><p data-en="Customize shortcuts, toolbars, excluded apps, and the interface theme.">自定义快捷键、工具条、应用黑名单和界面主题。</p></div></div><div><span aria-hidden="true">⇣</span><div><h3 data-en="Downloads without the fuss">模型下载，有条不紊</h3><p data-en="Manage local models with pause, resume, and integrity checks.">统一管理本地模型下载，支持暂停、断点续传和完整性校验。</p></div></div><div><span aria-hidden="true">⊞</span><div><h3 data-en="Permissions when you need them">需要时，再申请权限</h3><p data-en="Accessibility enables text selection. Screen recording is requested when you first capture your screen.">划词使用辅助功能权限，首次截图时再申请屏幕录制权限。</p></div></div></div></section>
 
-    <section class="download wrap" id="download" aria-labelledby="download-title"><img src="icon.png" width="82" height="82" alt="Fireflint"><p class="kicker" data-en="MAKE ROOM FOR YOUR NEXT IDEA">为下一次灵感，留一点空间</p><h2 id="download-title" data-en="Your Mac. A little more capable.">让你的 Mac，多一点可能。</h2><p data-en="Start local. Choose your model. Keep the important decisions yours.">从本地开始，自由选择模型，让重要决定继续由你掌握。</p><a class="button" data-download href="https://github.com/badpx/FireflintRelease/releases/latest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg><span data-en="Download for macOS">下载 macOS 版</span></a><p class="requirements"><span data-en="macOS 14+ · One-time local model download required">macOS 14+ · 首次使用本地 AI 需下载模型</span></p><a class="release-link" href="https://github.com/badpx/FireflintRelease/releases" data-en="Release notes ↗">查看版本更新 ↗</a></section>
+    <section class="download wrap" id="download" aria-labelledby="download-title"><img src="icon.png" width="82" height="82" alt="Fireflint"><p class="kicker" data-en="MAKE ROOM FOR YOUR NEXT IDEA">为下一次灵感，留一点空间</p><h2 id="download-title" data-en="Your Mac. A little more capable.">让你的 Mac，多一点可能。</h2><p data-en="Local AI. No token fees. Privacy you control.">本地 AI，Token 自由，隐私可控。</p><a class="button" data-download href="https://github.com/badpx/FireflintRelease/releases/latest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg><span data-en="Download for macOS">下载 macOS 版</span></a><p class="requirements"><span data-en="macOS 14+ · One-time local model download required">macOS 14+ · 首次使用本地 AI 需下载模型</span></p><a class="release-link" href="https://github.com/badpx/FireflintRelease/releases" data-en="Release notes ↗">查看版本更新 ↗</a></section>
 
     <section class="section wrap faq" id="faq" aria-labelledby="faq-title"><div><p class="kicker">FAQ</p><h2 id="faq-title" data-en="A few things to know.">开始之前，<br>你可能想了解。</h2></div><div class="faq-list">
       <details><summary data-en="Does Fireflint need an internet connection?">使用火石需要联网吗？</summary><p data-en="Local inference and macOS OCR run on your device. The first local model download needs a connection. Web research, external AI providers, and integrations also use the network when you choose them.">本地推理和 macOS OCR 在设备上运行。首次下载本地模型需要联网；当你使用联网检索、外部模型或第三方集成时，相应功能也需要网络连接。</p></details>
+      <details><summary data-en="Are there token fees?">使用火石需要支付 Token 费用吗？</summary><p data-en="Local model inference runs on your Mac without per-token charges. If you connect an external model, any usage fees are determined by that provider.">本地模型在你的 Mac 上推理，不按 Token 计费。如果连接外部模型，相关使用费用由对应供应商决定。</p></details>
       <details><summary data-en="Can I use my own model provider?">可以使用自己的模型供应商吗？</summary><p data-en="Yes. Use the built-in local model or connect an external provider. Model selection, privacy redaction, and tool authorization are separate controls.">可以。你可以使用内置本地模型，也可以连接外部模型服务。模型选择、隐私脱敏和工具授权分别可控。</p></details>
       <details><summary data-en="Which document formats can it read?">可以读取哪些文档？</summary><p data-en="Fireflint supports PDF, Word, Excel, and PowerPoint. Local OCR helps read scanned PDFs, and document images can be inspected as needed.">支持 PDF、Word、Excel 和 PowerPoint。扫描 PDF 可通过本地 OCR 辅助读取，文档中的图片也能按需查看。</p></details>
       <details><summary data-en="How do I install Fireflint?">如何安装火石？</summary><p data-en="Download the DMG from GitHub Releases, open it, and drag Fireflint into Applications. Launch the app and follow the prompts to download the local model and enable permissions as needed.">从 GitHub Releases 下载 DMG，打开后将 Fireflint 拖入「应用程序」。启动应用后，按引导下载本地模型，并在需要时开启相应系统权限。</p></details>
     </div></section>
   </main>
-  <footer class="footer wrap"><a class="brand" href="#"><img src="icon.png" width="30" height="30" alt=""><span>Fireflint</span></a><p data-en="AI that starts local. Built for your workflow.">从本地出发，让 AI 更贴近你的工作。</p><div><a href="https://github.com/badpx/FireflintRelease/blob/main/README_CN.md" data-doc data-en="Guide">使用介绍</a><a href="https://github.com/badpx/FireflintRelease/issues" data-en="Feedback">反馈</a><a href="https://github.com/badpx/FireflintRelease">GitHub ↗</a></div></footer>
+  <footer class="footer wrap"><a class="brand" href="#"><img src="icon.png" width="30" height="30" alt=""><span>Fireflint</span></a><p data-en="Local AI. No token fees. Privacy you control.">本地 AI，Token 自由，隐私可控。</p><div><a href="https://github.com/badpx/FireflintRelease/blob/main/README_CN.md" data-doc data-en="Guide">使用介绍</a><a href="https://github.com/badpx/FireflintRelease/issues" data-en="Feedback">反馈</a><a href="https://github.com/badpx/FireflintRelease">GitHub ↗</a></div></footer>
   <dialog id="image-dialog" aria-label="Screenshot preview"><button id="close-image" type="button" aria-label="Close screenshot">×</button><img id="large-image" alt=""><p data-en="Press Esc or click outside to close">按 Esc 或点击空白处关闭</p></dialog>
 </body>
 </html>
