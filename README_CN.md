@@ -1,6 +1,8 @@
 # Fireflint 火石
 ## 让 AI 融入工作，让隐私握在自己手中
 
+**[产品官网](https://badpx.github.io/FireflintRelease/) · [下载最新版本](https://github.com/badpx/FireflintRelease/releases/latest)**
+
 **[English](README.md) | 中文**
 
 Fireflint 是一款面向 macOS 的 AI 助手。选中文字、截取屏幕、添加文档，就能开始翻译、提炼、检索和分析。

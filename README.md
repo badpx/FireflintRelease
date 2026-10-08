@@ -1,6 +1,8 @@
 # Fireflint
 ## Bring AI into your workflow. Keep privacy in your hands.
 
+**[Website](https://badpx.github.io/FireflintRelease/?lang=en) · [Download the latest release](https://github.com/badpx/FireflintRelease/releases/latest)**
+
 **English | [中文](README_CN.md)**
 
 Fireflint is an AI assistant for macOS. Select text, capture your screen, or drop in a document to translate, summarize, research, and analyze.
